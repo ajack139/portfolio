@@ -1,0 +1,24 @@
+
+# Ignore embedded repo folder
+/niner-tunes-project/niner-tunes-project/practice-music-player/
+
+
+# Ignore Node/React build junk
+node_modules/
+dist/
+build/
+.next/
+.cache/
+
+# Ignore this entire subproject inside portfolio
+niner-tunes-project/niner-tunes-project/practice-music-player/
+
+# Ignore macOS junk
+.DS_Store
+
+# Large media/archives (host externally)
+assests/*.mp4
+assests/*.MOV
+assests/*.zip
+niner-tunes-project/*.zip
+

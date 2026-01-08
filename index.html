@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ananda Jackson | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">Ananda Jackson</a>
+      <div class="nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- HERO -->
+    <section class="hero card">
+
+      <!-- LEFT -->
+      <div class="hero-left">
+        <p class="pill">IT • UX-minded • Hands-on</p>
+
+        <h1>Hi, I’m Ananda.</h1>
+
+        <p class="lead">
+          I’m an IT student graduating Dec 2025. I build user-centered solutions and I’m comfortable
+          troubleshooting across hardware, software, and systems.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn primary" href="projects.html">View Projects</a>
+          <a class="btn ghost" href="resume.pdf" target="_blank" rel="noreferrer">Open Resume</a>
+        </div>
+
+        <div class="mini">
+          <p><strong>Focus:</strong> Tech support • UX/HCI • Systems foundations</p>
+          <p><strong>Tools:</strong> HTML/CSS •Spark/Hadoop • SQL • Java • Python</p>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="hero-right">
+        <div class="blob">
+          <img src="assests/headshot.jpeg" alt="Ananda Jackson portrait" />
+        </div>
+      </div>
+
+    </section>
+
+    <!-- LOWER CARDS -->
+    <section class="grid">
+
+      <article class="section card">
+        <h2>What I bring</h2>
+        <ul class="clean">
+          <li>Clear communication + patience with users</li>
+          <li>Structured troubleshooting (root cause + verification)</li>
+          <li>Documentation that others can follow</li>
+        </ul>
+      </article>
+
+            <article class="section card">
+        <h2>Quick links</h2>
+        <ul class="clean">
+          <li><a href="projects.html">Project portfolio</a></li>
+          <li><a href="resume.pdf" target="_blank" rel="noreferrer">Resume PDF</a></li>
+          <li><a href="mailto:your@email.com">your@email.com</a></li>
+        </ul>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Ananda Jackson <span id="year"></span></p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

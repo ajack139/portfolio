@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arduino Audio Visualizer | Ananda Jackson</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">Ananda Jackson</a>
+    <div class="nav-links">
+      <a href="projects.html">Projects</a>
+      <a href="resume.pdf" target="_blank">Resume</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="card section">
+    <p class="pill">Hardware • Troubleshooting</p>
+    <h1>Arduino Audio Visualizer</h1>
+    <p class="lead">
+      A physical audio visualizer built using an Arduino, microphone input, and LED
+      matrix to translate sound into real-time visual output.
+    </p>
+  </section>
+
+  <!-- WHAT I DID -->
+  <section class="card section">
+    <h2>What I did</h2>
+    <ul class="clean">
+      <li>Integrated Arduino with microphone and LED matrix</li>
+      <li>Debugged signal noise and inconsistent output</li>
+      <li>Tested multiple visualization modes</li>
+      <li>Documented wiring and troubleshooting steps</li>
+    </ul>
+  </section>
+
+  <!-- GALLERY -->
+  <!-- GALLERY -->
+  <section class="card section">
+    <h2>Progress gallery</h2>
+    <p class="case-text">Build progress: wiring, LED tests, and final enclosure.</p>
+
+    <div class="shots">
+      <div class="shot">
+        <img src="assests/step1.jpg" alt="Breadboard + wiring" />
+      </div>
+
+      <div class="shot">
+        <img src="assests/step2.jpg" alt="LED matrix test" />
+      </div>
+
+      <div class="shot">
+        <video
+          class="project-video"
+          controls
+          muted
+          playsinline
+          preload="metadata"
+        >
+          <!-- Prefer MP4 -->
+          <source src="assests/step3.mp4" type="video/mp4" />
+          <!-- Optional fallback if you keep MOV too -->
+          <source src="assests/step3.MOV" type="video/quicktime" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <p class="case-text" style="margin-top:12px;">
+      Final enclosure build showing the assembled laser-cut housing,
+      internal wiring layout, and finished LED matrix integration.
+    </p>
+  </section>
+
+
+    </div>
+  </section>
+
+ <!-- FILES -->
+<section class="card section">
+  <h2>Files</h2>
+  <p class="case-text">
+    Design and build files used for the Arduino Audio Visualizer.
+  </p>
+
+  <ul class="clean">
+    <li>
+      <a href="assests/audio_visualizer.ino" download>
+        Arduino sketch (.ino)
+      </a>
+    </li>
+    <li>
+      <a href="assests/wiring-diagram.jpg" target="_blank" rel="noreferrer">
+        Wiring diagram (PDF)
+      </a>
+    </li>
+    <li>
+      <a href="assests/enclosure.stl" download>
+        Enclosure 3D model (STL)
+      </a>
+    </li>
+    <li>
+      <a href="assests/laser-cut.svg" target="_blank" rel="noreferrer">
+       Laser cut layout (SVG)
+      </a>
+
+    </li>
+  </ul>
+</section>
+
+
+  <!-- CODE SNIPPET -->
+  <section class="card section">
+    <h2>Code snippet</h2>
+    <p class="case-text">Example of reading microphone input and mapping it to output.</p>
+
+    <pre class="codeblock"><code>
+// --- Baseline calibration (run once at startup) ---
+if (!baselineSet) {
+  int reading = analogRead(MIC_PIN);
+  calibSum += reading;
+  calibCount++;
+
+  if (calibCount >= 500) {
+    baseline = (float)calibSum / (float)calibCount;
+    baselineSet = true;
+  }
+  delay(1);
+  return;
+}
+
+// --- Read mic, center around baseline, smooth noise ---
+long sum = 0;
+for (int i = 0; i < 16; i++) sum += analogRead(MIC_PIN);
+
+float raw = sum / 16.0;
+float centered = fabs(raw - baseline);
+
+// low-pass filter to reduce buzz/jitter
+filteredCentered = 0.7 * filteredCentered + 0.3 * centered;
+centered = filteredCentered;
+
+// --- Convert to a stable 0–8 bar height ---
+float levelAbove = (centered > QUIET_THRESHOLD) ? (centered - QUIET_THRESHOLD) : 0;
+
+if (levelAbove <= 0) smoothedLevel *= 0.35;          // decay
+else smoothedLevel = 0.3 * smoothedLevel + 0.7 * levelAbove; // attack
+
+float fractionBar = constrain(smoothedLevel / MAX_LEVEL_DIFF, 0.0, 1.0);
+int barHeight = (int)(fractionBar * 8.0 + 0.5);
+
+    </code></pre>
+  </section>
+
+  <!-- WHAT I LEARNED -->
+  <section class="card section">
+    <h2>What I learned</h2>
+    <ul class="clean">
+      <li>Hardware debugging requires isolating variables step by step</li>
+      <li>Small wiring issues can cause major output problems</li>
+      <li>Documentation saves time during iteration</li>
+    </ul>
+  </section>
+
+  <!-- BACK BUTTON -->
+  <div class="cta-row section">
+    <a class="btn" href="projects.html" style="margin-top:18px;">← Back to Projects</a>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <p>Ananda Jackson <span id="year"></span></p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

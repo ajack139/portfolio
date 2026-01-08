@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panda Ops Blog | Ananda Jackson</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="panda-blog">
+
+  <!-- NAV -->
+  <header class="site-header panda-header">
+    <nav class="nav">
+      <a class="brand panda-brand" href="index.html">🐼 Panda Ops</a>
+
+      <div class="nav-links">
+        <a href="#posts">Posts</a>
+        <a href="#lab">Lab</a>
+        <a href="#about">About</a>
+        <!-- Optional: link back to main portfolio later -->
+        <!-- <a href="../portfolio/index.html">Portfolio</a> -->
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- HERO -->
+    <section class="panda-hero">
+      <div>
+        <p class="panda-kicker">Home Lab • Linux • Networking • Self-Hosting</p>
+        <h1 class="panda-title">Notes from my Home Lab</h1>
+        <p class="panda-lead">
+          Short, practical posts about what I built, what broke, and how I fixed it.
+          This blog is my proof-of-skills project: servers, troubleshooting, automation, and documentation.
+        </p>
+
+        <div class="panda-cta">
+          <a class="panda-btn" href="#posts">Read latest posts</a>
+          <a class="panda-btn panda-btn-ghost" href="#start-here">Start here</a>
+        </div>
+
+        <div class="panda-chips">
+          <span class="panda-chip">🐧 Ubuntu / WSL2</span>
+          <span class="panda-chip">🐳 Docker</span>
+          <span class="panda-chip">📡 DNS / DHCP</span>
+          <span class="panda-chip">📈 Monitoring</span>
+        </div>
+      </div>
+
+      <div class="panda-hero-card">
+        <div class="panda-hero-card-top">
+          <div class="panda-face" aria-hidden="true"></div>
+          <div>
+            <p class="panda-mini">Status</p>
+            <p class="panda-mini-strong">Server: online (localhost)</p>
+          </div>
+        </div>
+
+        <div class="panda-hero-stats">
+          <div class="panda-stat">
+            <p class="panda-mini">Current focus</p>
+            <p class="panda-mini-strong">Self-hosted blog + Pi-hole</p>
+          </div>
+          <div class="panda-stat">
+            <p class="panda-mini">Next upgrade</p>
+            <p class="panda-mini-strong">NGINX + LAN access</p>
+          </div>
+        </div>
+
+        <p class="panda-mini" style="margin-top:10px;">
+          Tip: This blog is served from Ubuntu on my machine. Later I’ll move it to an always-on home lab server.
+        </p>
+      </div>
+    </section>
+
+    <!-- START HERE -->
+    <section id="start-here" class="panda-section">
+      <h2 class="panda-h2">Start here</h2>
+      <div class="panda-grid-3">
+        <article class="panda-card">
+          <h3 class="panda-h3">1) What this blog is</h3>
+          <p class="panda-text">
+            A runbook-style IT blog: clear steps, screenshots, troubleshooting notes, and what I learned.
+          </p>
+        </article>
+
+        <article class="panda-card">
+          <h3 class="panda-h3">2) What I’m building</h3>
+          <p class="panda-text">
+            Projects that stack: ad blocking → monitoring → self-hosted storage → automation.
+          </p>
+        </article>
+
+        <article class="panda-card">
+          <h3 class="panda-h3">3) How to read posts</h3>
+          <p class="panda-text">
+            Each post includes: goal → environment → steps → errors → fixes → takeaway.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- MAIN LAYOUT -->
+    <section id="posts" class="panda-layout">
+      <!-- POSTS -->
+      <div>
+        <h2 class="panda-h2">Latest posts</h2>
+
+        <!-- Featured post -->
+        <article class="panda-post panda-post-featured">
+          <div class="panda-post-meta">
+            <span class="panda-badge">Featured</span>
+            <span>Dec 30, 2025</span>
+            <span>•</span>
+            <span>Linux / WSL2</span>
+          </div>
+
+          <h3 class="panda-post-title">My first self-hosted website on Ubuntu (WSL2)</h3>
+          <p class="panda-text">
+            I organized my Linux home directory, served the site with Python’s HTTP server, learned why
+            <code>index.html</code> matters, and fixed broken asset paths.
+          </p>
+
+          <div class="panda-post-actions">
+            <!-- Later you can turn this into a real post page -->
+            <a class="panda-btn" href="#post-1">Read</a>
+            <a class="panda-btn panda-btn-ghost" href="#lab">View lab notes</a>
+          </div>
+        </article>
+
+        <!-- Regular post cards -->
+        <article class="panda-post">
+          <div class="panda-post-meta">
+            <span class="panda-badge panda-badge-soft">Coming next</span>
+            <span>DNS / Networking</span>
+          </div>
+          <h3 class="panda-post-title">Pi-hole: ad blocking for the whole home</h3>
+          <p class="panda-text">
+            DNS-based ad blocking, DHCP/router settings, and troubleshooting when things “mysteriously” stop loading.
+          </p>
+        </article>
+
+        <article class="panda-post">
+          <div class="panda-post-meta">
+            <span class="panda-badge panda-badge-soft">Planned</span>
+            <span>Monitoring / Ops</span>
+          </div>
+          <h3 class="panda-post-title">Monitoring my lab: uptime + system metrics</h3>
+          <p class="panda-text">
+            Build a simple dashboard, set actionable alerts, and keep an incident log like a real ops environment.
+          </p>
+        </article>
+
+        <article class="panda-post">
+          <div class="panda-post-meta">
+            <span class="panda-badge panda-badge-soft">Planned</span>
+            <span>Self-hosting / Storage</span>
+          </div>
+          <h3 class="panda-post-title">Self-hosted drive: Nextcloud basics + backups</h3>
+          <p class="panda-text">
+            Users, permissions, storage layout, and the #1 rule: make a backup plan before you trust it.
+          </p>
+        </article>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside>
+        <div id="about" class="panda-card panda-sticky">
+          <h2 class="panda-h2" style="margin-top:0;">About</h2>
+          <p class="panda-text">
+            I’m building a home lab to sharpen real IT skills: Linux, networking, troubleshooting, and automation.
+            This blog is where I document the journey (runbook style).
+          </p>
+
+          <div class="panda-divider"></div>
+
+          <h3 class="panda-h3">Categories</h3>
+          <div class="panda-chips">
+            <span class="panda-chip">Linux</span>
+            <span class="panda-chip">Networking</span>
+            <span class="panda-chip">Self-Hosting</span>
+            <span class="panda-chip">Monitoring</span>
+            <span class="panda-chip">Troubleshooting</span>
+            <span class="panda-chip">Automation</span>
+          </div>
+
+          <div class="panda-divider"></div>
+
+          <h3 class="panda-h3">Contact</h3>
+          <p class="panda-text" style="margin-bottom:0;">
+            <!-- optional -->
+            Add your email/LinkedIn here later.
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- LAB NOTES -->
+    <section id="lab" class="panda-section">
+      <h2 class="panda-h2">Lab notes</h2>
+      <div class="panda-grid-2">
+        <article class="panda-card">
+          <h3 class="panda-h3">Current environment</h3>
+          <ul class="panda-list">
+            <li>Ubuntu 24.04 on WSL2</li>
+            <li>Serving static site with Python HTTP server</li>
+            <li>Folder: <code>/home/queen/blogs/it-blog</code></li>
+          </ul>
+        </article>
+
+        <article class="panda-card">
+          <h3 class="panda-h3">Next upgrades</h3>
+          <ul class="panda-list">
+            <li>NGINX + real web server config</li>
+            <li>LAN access from phone/other devices</li>
+            <li>Public access via Cloudflare Tunnel (safe)</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="panda-footer">
+      <p>🐼 Panda Ops Blog • Built by Ananda Jackson • <span id="year"></span></p>
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

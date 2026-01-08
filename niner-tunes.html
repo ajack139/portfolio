@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Niner Tunes | Ananda Jackson</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">Ananda Jackson</a>
+    <div class="nav-links">
+      <a href="projects.html">Projects</a>
+      <a href="resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="card section">
+    <p class="pill">Design • Prototyping • Web</p>
+    <h1>Niner Tunes</h1>
+    <p class="lead">
+      A music app concept/prototype designed in my prototyping class.
+      This page shows the final walkthrough and key screens.
+    </p>
+
+    <div class="cta-row" style="margin-top:14px;">
+      <a class="btn" href="projects.html">← Back to Projects</a>
+      <!-- optional later -->
+      <!-- <a class="btn" href="https://github.com/..." target="_blank" rel="noreferrer">View Code</a> -->
+    </div>
+  </section>
+
+  <section class="grid">
+    <article class="card section">
+      <h2>What I built</h2>
+      <ul class="clean">
+        <li>Core user flow: discovery → playback</li>
+        <li>Consistent UI components + navigation</li>
+        <li>Iterated based on class feedback</li>
+      </ul>
+    </article>
+
+    <article class="card section">
+      <h2>Tools</h2>
+      <ul class="clean">
+        <li>Figma</li>
+        <li>Prototyping + usability feedback</li>
+        <li>HTML/CSS (if applicable)</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="card section">
+    <h2>Demo video</h2>
+    <p class="case-text">Short walkthrough of the main flow and UI.</p>
+
+    <video class="project-video" controls playsinline preload="metadata">
+      <source src="assests/niner-tunes.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section class="card section">
+  <h2>Screenshots & interactions</h2>
+
+  <div class="shots">
+    <div class="shot">
+      <img src="assests/niner1.jpg" alt="Home screen" />
+    </div>
+
+    <div class="shot">
+      <img src="assests/niner2.jpg" alt="Playback flow" />
+    </div>
+
+    <div class="shot">
+      <img src="assests/login-gif.gif" alt="Search interaction" />
+    </div>
+
+    <div class="shot">
+      <img src="assests/custom-gif.gif" alt="Search interaction" />
+    </div>
+
+    <div class="shot">
+      <img src="assests/history-gif.gif" alt="Search interaction" />
+    </div>
+  </div>
+</section>
+
+  <!-- FILES -->
+<section class="card section">
+  <h2>Files</h2>
+  <p class="case-text">
+    This ZIP contains the supporting
+    files created for the Niner Tunes project.
+  </p>
+
+  <a
+    class="btn"
+    href="niner-tunes-project/niner-tunes-project.zip"
+    download
+    style="margin-top:12px; display:inline-block;"
+  >
+    Download Niner Tunes (ZIP)
+  </a>
+</section>
+
+
+</main>
+
+<footer class="footer">
+  <p>Ananda Jackson <span id="year"></span></p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

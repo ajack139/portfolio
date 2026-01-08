@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ananda Jackson | Projects</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">Ananda Jackson</a>
+      <div class="nav-links">
+        <a class="active" href="projects.html">Projects</a>
+        <a href="resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="pagehead">
+      <h1>Projects</h1>
+      <p class="lead">A small set of projects that show how I think, build, and troubleshoot.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card project">
+        <div class="project-top">
+          <h2>Arduino Audio Visualizer</h2>
+          <p class="pill">Hardware • Troubleshooting</p>
+        </div>
+        <p>
+          Built a physical audio visualizer using an Arduino, LED matrix, and microphone input.
+          Focused on debugging, iteration, and reliable output behavior.
+        </p>
+        <ul class="tags">
+          <li>Arduino</li><li>Sensors</li><li>LED Matrix</li><li>Debugging</li>
+        </ul>
+        <details>
+          <summary>View details</summary>
+          <div class="details">
+            <p><strong>What I did:</strong> integrated components, tested signal behavior, adjusted output modes, documented fixes.</p>
+            <p><strong>Outcome:</strong> working prototype + clearer hardware/software troubleshooting workflow.</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="card project">
+        <div class="project-top">
+          <h2>Mood & Food</h2>
+          <p class="pill">UX • Research</p>
+        </div>
+        <p>
+          Designed a wellness app concept focused on emotional awareness and eating habits through
+          user-centered research and iterative prototyping.
+        </p>
+        <ul class="tags">
+          <li>Figma</li><li>User Research</li><li>Prototyping</li><li>Iteration</li>
+        </ul>
+        <details>
+          <summary>View details</summary>
+          <div class="details">
+            <p><strong>What I did:</strong> personas, flows, prototype iterations, usability-minded decisions.</p>
+            <p><strong>Outcome:</strong> interactive prototype + documented design rationale.</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="card project">
+        <div class="project-top">
+          <h2>Niner Tunes</h2>
+          <p class="pill">Design • Prototyping</p>
+        </div>
+        <p>
+          Prototyped a music-focused experience and refined the UI through feedback and iteration.
+          Built a clear user flow from discovery to playback.
+        </p>
+        <ul class="tags">
+          <li>Wireframes</li><li>UI Design</li><li>User Flow</li><li>Testing</li>
+        </ul>
+        <details>
+          <summary>View details</summary>
+          <div class="details">
+            <p><strong>What I did:</strong> storyboarding, wireframes, interactive prototype, revisions.</p>
+            <p><strong>Outcome:</strong> polished flow + stronger UI consistency.</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="card project">
+        <div class="project-top">
+          <h2>Big Data: Hadoop & Spark</h2>
+          <p class="pill">Systems • Data</p>
+        </div>
+        <p>
+          Worked with HDFS and Apache Spark to process and analyze datasets, learning how distributed
+          systems handle storage and large-scale processing.
+        </p>
+        <ul class="tags">
+          <li>Hadoop</li><li>HDFS</li><li>Spark</li><li>Data Processing</li>
+        </ul>
+        <details>
+          <summary>View details</summary>
+          <div class="details">
+            <p><strong>What I did:</strong> loaded data into HDFS, ran Spark jobs, validated outputs, documented learnings.</p>
+            <p><strong>Outcome:</strong> clearer understanding of scalability + distributed workflows.</p>
+          </div>
+        </details>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="y"></span> Ananda Jackson</p>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
