@@ -9,78 +9,235 @@
 
 <body>
 
-  <!-- NAV -->
   <header class="site-header">
     <nav class="nav">
       <a class="brand" href="index.html">Ananda Jackson</a>
       <div class="nav-links">
         <a href="projects.html">Projects</a>
         <a href="resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+        <a href="#about">About</a><a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
   <main class="container">
 
-    <!-- HERO -->
-    <section class="hero card">
-
-      <!-- LEFT -->
+    <section class="hero card" id="top">
       <div class="hero-left">
         <p class="pill">IT • UX-minded • Hands-on</p>
-
         <h1>Hi, I’m Ananda.</h1>
 
         <p class="lead">
-          I’m an IT student graduating Dec 2025. I build user-centered solutions and I’m comfortable
-          troubleshooting across hardware, software, and systems.
+          IT student graduating <strong>December 2025</strong>. I build and troubleshoot across hardware, software, and systems—always with
+          clear documentation and a user-centered mindset.
         </p>
 
         <div class="cta-row">
           <a class="btn primary" href="projects.html">View Projects</a>
-          <a class="btn ghost" href="resume.pdf" target="_blank" rel="noreferrer">Open Resume</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
         </div>
 
         <div class="mini">
-          <p><strong>Focus:</strong> Tech support • UX/HCI • Systems foundations</p>
-          <p><strong>Tools:</strong> HTML/CSS •Spark/Hadoop • SQL • Java • Python</p>
+          <p><strong>Focus:</strong> IT support • Systems fundamentals • UX/HCI</p>
+          <p><strong>Currently:</strong> Home lab builds + learning AI/ML and AI governance</p>
         </div>
       </div>
 
-      <!-- RIGHT -->
       <div class="hero-right">
         <div class="blob">
           <img src="assests/headshot.jpeg" alt="Ananda Jackson portrait" />
         </div>
       </div>
-
     </section>
 
-    <!-- LOWER CARDS -->
-    <section class="grid">
+    <section class="section" id="about">
+      <h2 class="h2">About</h2>
 
-      <article class="section card">
-        <h2>What I bring</h2>
-        <ul class="clean">
-          <li>Clear communication + patience with users</li>
-          <li>Structured troubleshooting (root cause + verification)</li>
-          <li>Documentation that others can follow</li>
-        </ul>
-      </article>
+      <section class="grid">
+        <article class="section card">
+          <h3>What I’m passionate about</h3>
+          <p class="case-text">
+            Building reliable systems, helping people get unstuck, and making technology easier to understand through clear setup + documentation.
+          </p>
+        </article>
 
-            <article class="section card">
-        <h2>Quick links</h2>
-        <ul class="clean">
-          <li><a href="projects.html">Project portfolio</a></li>
-          <li><a href="resume.pdf" target="_blank" rel="noreferrer">Resume PDF</a></li>
-          <li><a href="mailto:your@email.com">your@email.com</a></li>
-        </ul>
-      </article>
+        <article class="section card">
+          <h3>What I specialize in</h3>
+          <ul class="clean">
+            <li>Structured troubleshooting (isolate → test → validate)</li>
+            <li>Clear communication and documentation</li>
+            <li>Bridging hardware, software, and networking fundamentals</li>
+          </ul>
+        </article>
 
+        <article class="section card">
+          <h3>What I do outside of projects</h3>
+          <p class="case-text">
+            When I’m not working in my home lab, I’m learning AI/ML fundamentals and exploring AI governance and responsible technology.
+          </p>
+        </article>
+
+        <article class="section card">
+          <h3>Technical skills</h3>
+
+          <div class="skills">
+            <div class="skill"><span>Linux / CLI</span><span class="dots"><i style="--p:85"></i></span></div>
+            <div class="skill"><span>Networking basics</span><span class="dots"><i style="--p:70"></i></span></div>
+            <div class="skill"><span>HTML / CSS</span><span class="dots"><i style="--p:80"></i></span></div>
+            <div class="skill"><span>Python</span><span class="dots"><i style="--p:70"></i></span></div>
+            <div class="skill"><span>SQL</span><span class="dots"><i style="--p:65"></i></span></div>
+            <div class="skill"><span>Spark / Hadoop (intro)</span><span class="dots"><i style="--p:55"></i></span></div>
+          </div>
+
+          <p class="case-text" style="margin-top:10px;">
+            (These are visual cues—not “expert ratings.”)
+          </p>
+        </article>
+      </section>
     </section>
+
+    <section class="section" id="work">
+      <h2 class="h2">Explore my work</h2>
+      <p class="case-text">A few highlights—swipe/scroll or use the arrows.</p>
+
+      <div class="carousel" data-carousel tabindex="0">
+        <button class="car-btn prev" aria-label="Previous">‹</button>
+
+        <div class="car-track">
+
+          <article class="card project-card">
+            <img class="project-thumb" src="assests/step2.jpg" alt="Arduino Audio Visualizer preview" />
+            <div class="project-top">
+              <h3>Arduino Audio Visualizer</h3>
+              <p class="pill">Hardware • Troubleshooting</p>
+            </div>
+            <p class="case-text">Mic input → LED matrix output, with real-world debugging and documentation.</p>
+            <div class="project-links">
+              <a class="btn sm" href="arduino-visualizer.html">Case study</a>
+              <a class="btn sm ghost" href="assests/audio_visualizer.ino" download>Code</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <img class="project-thumb" src="assests/moodfood-cover.png" alt="Mood & Food preview" />
+            <div class="project-top">
+              <h3>Mood &amp; Food</h3>
+              <p class="pill">UX • Research</p>
+            </div>
+            <p class="case-text">A student wellness concept connecting mood → meals → reflection.</p>
+            <div class="project-links">
+              <a class="btn sm" href="mood-and-food.html">Case study</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <img class="project-thumb" src="assests/niner1.jpg" alt="Niner Tunes preview" />
+            <div class="project-top">
+              <h3>Niner Tunes</h3>
+              <p class="pill">Design • Prototyping</p>
+            </div>
+            <p class="case-text">Interactive prototype focused on clear flows and consistent UI patterns.</p>
+            <div class="project-links">
+              <a class="btn sm" href="niner-tunes.html">Case study</a>
+              <a class="btn sm ghost" href="niner-tunes-project/niner-tunes-project.zip" download>Files</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <img class="project-thumb" src="assests/spark-q1.png" alt="Spark project preview" />
+            <div class="project-top">
+              <h3>Movies Project — Spark (RDD)</h3>
+              <p class="pill">Big Data • PySpark</p>
+            </div>
+            <p class="case-text">RDD pipelines with reliable parsing and correct aggregations.</p>
+            <div class="project-links">
+              <a class="btn sm" href="hadoop-spark.html">Case study</a>
+              <a class="btn sm ghost" href="assests/Movies Project_fixed_assignment_v2.py" download>Code</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <img class="project-thumb" src="assests/headshot.jpeg" alt="Panda Ops Blog preview" />
+            <div class="project-top">
+              <h3>Panda Ops: Home Lab Blog</h3>
+              <p class="pill">IT • Networking • Linux</p>
+            </div>
+            <p class="case-text">Runbook-style notes from my home lab: servers, troubleshooting, and automation.</p>
+            <div class="project-links">
+              <a class="btn sm" href="it-homelab-blog.html">View blog</a>
+            </div>
+          </article>
+
+        </div>
+
+        <button class="car-btn next" aria-label="Next">›</button>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <h2 class="h2">Education</h2>
+      <section class="grid">
+        <article class="card section">
+          <h3>University of North Carolina at Charlotte</h3>
+          <p class="case-text"><strong>B.A. Information Technology</strong> • Expected Dec 2025</p>
+          <ul class="clean">
+            <li>Coursework: systems, networking fundamentals, HCI/UX, data tools</li>
+          </ul>
+        </article>
+
+        <article class="card section">
+          <h3>Fayetteville Technical Community College</h3>
+          <p class="case-text"><strong>Associate in Science</strong></p>
+          <ul class="clean">
+            <li>Built a strong foundation in math, science, and technical communication</li>
+          </ul>
+        </article>
+      </section>
+    </section>
+
+    <section class="section" id="contact">
+      <h2 class="h2">Get in touch</h2>
+      <p class="case-text">Send me a message—this form opens your email client with everything filled in.</p>
+
+      <section class="card section">
+        <form class="contact-form" id="contactForm" data-contact-email="you@example.com">
+          <div class="form-grid">
+            <label>
+              <span>Name</span>
+              <input name="name" autocomplete="name" required />
+            </label>
+
+            <label>
+              <span>Email</span>
+              <input name="email" type="email" autocomplete="email" required />
+            </label>
+
+            <label class="full">
+              <span>Subject</span>
+              <input name="subject" required />
+            </label>
+
+            <label class="full">
+              <span>Message</span>
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+          </div>
+
+          <div class="cta-row">
+            <button class="btn primary" type="submit">Send message</button>
+            <a class="btn ghost" href="projects.html">View projects</a>
+          </div>
+
+          <p class="case-text" style="margin-top:10px;">
+            <strong>Note:</strong> Replace <code>you@example.com</code> in the HTML with your real contact email.
+          </p>
+        </form>
+      </section>
+    </section>
+
   </main>
 
-  <!-- FOOTER -->
+
   <footer class="footer">
     <p>Ananda Jackson <span id="year"></span></p>
   </footer>
@@ -88,6 +245,62 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
+
+
+<script>
+(function(){
+  function setupCarousel(root){
+    const track = root.querySelector(".car-track");
+    const prev = root.querySelector(".car-btn.prev");
+    const next = root.querySelector(".car-btn.next");
+    if(!track || !prev || !next) return;
+
+    function step(dir){
+      const amt = Math.max(240, track.clientWidth * 0.85) * dir;
+      track.scrollBy({ left: amt, behavior: "smooth" });
+    }
+    prev.addEventListener("click", () => step(-1));
+    next.addEventListener("click", () => step(1));
+
+    root.addEventListener("keydown", (e) => {
+      if(e.key === "ArrowLeft") { step(-1); e.preventDefault(); }
+      if(e.key === "ArrowRight"){ step( 1); e.preventDefault(); }
+    }, {passive:false});
+  }
+
+  document.querySelectorAll("[data-carousel]").forEach(setupCarousel);
+})();
+</script>
+
+
+<script>
+  (function(){
+    const form = document.getElementById("contactForm");
+    if(!form) return;
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const to = form.dataset.contactEmail || "";
+      const data = new FormData(form);
+
+      const subject = data.get("subject") || "Portfolio message";
+      const body = [
+        "Name: " + (data.get("name") || ""),
+        "Email: " + (data.get("email") || ""),
+        "",
+        (data.get("message") || "")
+      ].join("\n");
+
+      const href = "mailto:" + encodeURIComponent(to)
+        + "?subject=" + encodeURIComponent(subject)
+        + "&body=" + encodeURIComponent(body);
+
+      window.location.href = href;
+    });
+  })();
+</script>
 
 </body>
 </html>

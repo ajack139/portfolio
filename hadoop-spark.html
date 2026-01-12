@@ -8,176 +8,110 @@
 </head>
 
 <body>
-<header class="site-header">
-  <nav class="nav">
-    <a class="brand" href="index.html">Ananda Jackson</a>
-    <div class="nav-links">
-      <a href="projects.html">Projects</a>
-      <a href="resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-    </div>
-  </nav>
-</header>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">Ananda Jackson</a>
+      <div class="nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+        
+      </div>
+    </nav>
+  </header>
 
 <main class="container">
 
-  <!-- HERO -->
   <section class="card section">
     <p class="pill">Big Data • PySpark • RDD APIs</p>
     <h1>Movies Project — Spark (RDD)</h1>
     <p class="lead">
-      Implemented movie analytics queries on a MovieLens-style dataset using <strong>PySpark RDD transformations/actions</strong>.
-      Focused on reliable parsing (commas in titles, pipe-separated genres), aggregations, and interpretable outputs.
+      Implemented movie analytics queries on a MovieLens‑style dataset using PySpark RDD transformations/actions,
+      focusing on reliable parsing and correct aggregations.
     </p>
-
-    <div class="tags-row">
-      <span class="tag">Apache Spark</span>
-      <span class="tag">PySpark</span>
-      <span class="tag">RDD</span>
-      <span class="tag">CSV Parsing</span>
-      <span class="tag">Data Aggregation</span>
-      <span class="tag">Linux/CLI</span>
-    </div>
-
-    <div class="cta-row" style="margin-top:14px;">
-      <a class="btn" href="projects.html">← Back to Projects</a>
-    </div>
   </section>
 
-  <!-- QUICK STATS -->
   <section class="grid case-grid">
     <article class="card section">
-      <h2>Goal</h2>
+      <h2>Problem</h2>
       <p class="case-text">
-        Use Spark RDD APIs to answer required dataset queries (Q1–Q3) and extend the analysis with optional queries (Q4–Q5).
+        Real CSV data is messy (commas in titles, multi‑genre fields). The task was to compute accurate results without “silent” parsing errors.
       </p>
     </article>
 
     <article class="card section">
-      <h2>My role</h2>
+      <h2>Goal</h2>
+      <p class="case-text">
+        Use Spark RDD APIs to answer required dataset queries and produce interpretable outputs.
+      </p>
+    </article>
+
+    <article class="card section">
+      <h2>What I did</h2>
       <ul class="clean">
         <li>Loaded and parsed <code>movies.csv</code> and <code>ratings.csv</code></li>
         <li>Built RDD pipelines per query (map/filter/groupByKey/reduceByKey)</li>
-        <li>Validated results using <code>take()</code> / printed outputs</li>
-        <li>Documented approach and results for submission</li>
+        <li>Validated results by sampling outputs and cross‑checking counts</li>
+        <li>Documented approach and results</li>
       </ul>
     </article>
 
     <article class="card section">
-      <h2>Datasets</h2>
+      <h2>Tools &amp; datasets</h2>
       <ul class="clean">
-        <li><strong>movies.csv</strong>: movieId, title (includes year), genres</li>
-        <li><strong>ratings.csv</strong>: userId, movieId, rating, timestamp</li>
-      </ul>
-    </article>
-
-    <article class="card section">
-      <h2>Skills demonstrated</h2>
-      <ul class="clean">
-        <li>Data parsing + cleaning for real CSV quirks</li>
-        <li>Aggregation logic and joining related datasets by IDs</li>
-        <li>Distributed computation mindset with Spark RDDs</li>
+        <li>Apache Spark / PySpark (RDD)</li>
+        <li>Linux / CLI</li>
+        <li><strong>movies.csv</strong> (movieId, title, genres)</li>
+        <li><strong>ratings.csv</strong> (userId, movieId, rating, timestamp)</li>
       </ul>
     </article>
   </section>
 
-  <!-- QUERIES -->
   <section class="card section">
     <h2>Queries implemented</h2>
 
     <div class="steps">
-
       <div class="step">
-        <h3>Q1 (Required): From 1995 onward, Comedy movies by year</h3>
-        <p class="case-text">
-          Parsed movie titles to extract year, expanded pipe-separated genres, filtered to <em>Comedy</em>,
-          then grouped results by year.
-        </p>
-        <ul class="clean">
-          <li>Key ops: <code>map</code>, <code>filter</code>, <code>flatMapValues</code>, <code>groupByKey</code></li>
-        </ul>
+        <h3>Q1: Comedy movies by year (1995+)</h3>
+        <p class="case-text">Extracted year from titles, expanded genres, grouped results by year.</p>
       </div>
 
       <div class="step">
-        <h3>Q2 (Required): % of users who gave at least one 5-star rating</h3>
-        <p class="case-text">
-          Filtered ratings where <code>rating == 5</code>, counted distinct users who gave at least one 5,
-          and divided by total distinct users.
-        </p>
-        <ul class="clean">
-          <li>Key ops: <code>filter</code>, <code>distinct</code>, <code>count</code></li>
-        </ul>
+        <h3>Q2: % of users with ≥1 five‑star rating</h3>
+        <p class="case-text">Filtered <code>rating == 5</code>, counted distinct users, divided by total users.</p>
       </div>
 
       <div class="step">
-        <h3>Q3 (Required): % of users with average rating ≥ 3.5</h3>
-        <p class="case-text">
-          Grouped ratings by user to compute per-user averages, then calculated the percentage meeting the threshold.
-        </p>
-        <ul class="clean">
-          <li>Key ops: <code>groupByKey</code>, average calculation, <code>filter</code>, <code>count</code></li>
-        </ul>
+        <h3>Q3: % of users with avg rating ≥ 3.5</h3>
+        <p class="case-text">Computed per‑user averages, then counted users meeting the threshold.</p>
       </div>
-
-      <div class="step">
-        <h3>Q4 (Optional): Per-genre average rating + number of films</h3>
-        <p class="case-text">
-          Computed average rating per movie, joined ratings with movie genres, then aggregated per genre to output:
-          <strong>(1) average rating</strong> and <strong>(2) number of films in that genre</strong>.
-          Movies with multiple genres are counted in each genre.
-        </p>
-        <ul class="clean">
-          <li>Key ops: join by <code>movieId</code>, genre expansion, per-genre aggregation</li>
-        </ul>
-      </div>
-
-
     </div>
   </section>
 
-  <!-- WORKFLOW -->
-  <section class="card section">
-    <h2>Workflow</h2>
-
-    <div class="steps">
-
-      <div class="step">
-        <h3>1) Download data</h3>
-        <p class="case-text">Worked from a Linux environment and downloaded the provided CSV files.</p>
-        <pre class="codeblock"><code>
-mkdir -p ~/3190/code/movies
-cd ~/3190/code/movies
-wget webpages.uncc.edu/qcheng1/course_resources/3190/jar/movies/movies.csv
-wget webpages.uncc.edu/qcheng1/course_resources/3190/jar/movies/ratings.csv
-        </code></pre>
-      </div>
-
-      <div class="step">
-        <h3>2) Run PySpark and execute RDD pipelines</h3>
-        <p class="case-text">
-          Used helper parsing functions to handle CSV lines and genre splitting, then executed Q1–Q5 RDD workflows.
-        </p>
-        <pre class="codeblock"><code>
-pyspark
-# Load movies.csv and ratings.csv into RDDs
-# Run Q1–Q5 pipelines
-# Use take() / print() for output capture
-        </code></pre>
-      </div>
-
-    
-  </section>
-
-  <!-- SCREENSHOTS -->
   <section class="card section">
     <h2>Screenshots / outputs</h2>
-    <p class="case-text">
-      Add screenshots showing the output for each query. Keep them readable (terminal zoomed in).
-    </p>
+    <p class="case-text">Terminal outputs captured for each query (zoomed for readability).</p>
 
-    <div class="shots shots--terminal">
-      <div class="shot"><img src="assests/spark-q1.png" alt="Q1 output" /></div>
-         <pre class="codeblock"><code>
-Q1 Output (first 5 years shown):
+    <div class="carousel gallery" data-carousel tabindex="0">
+      <button class="car-btn prev" aria-label="Previous">‹</button>
+
+      <div class="car-track shots-track terminal-track">
+        <div class="shot shot-slide terminal-slide"><img src="assests/spark-q1.png" alt="Q1 output screenshot" /></div>
+        <div class="shot shot-slide terminal-slide"><img src="assests/spark-q2.png" alt="Q2 output screenshot" /></div>
+        <div class="shot shot-slide terminal-slide"><img src="assests/spark-q3.png" alt="Q3 output screenshot" /></div>
+        <div class="shot shot-slide terminal-slide"><img src="assests/spark-q4.png" alt="Q4 output screenshot" /></div>
+      </div>
+
+      <button class="car-btn next" aria-label="Next">›</button>
+    </div>
+  </section>
+
+<section class="section card">
+  <h2>Readable outputs</h2>
+  <p class="muted">Same results as the screenshots, formatted as text for easy reading.</p>
+
+  <details open class="output-block">
+    <summary>Q1</summary>
+    <pre class="code-block">Q1 Output (first 5 years shown):
 [(1995, ['Ace Ventura: When Nature Calls', 'American President, The', 'Angus', 'Bad Boys', 'Batman Forever', 'Big Green, The', 
 'Billy Madison', 'Blue Juice', 'Blue in the Face', 'Born to Be Wild', 'Boys on the Side', 'Brady Bunch Movie, The', 'Brothers McMullen, The',
 'Bushwhacked', 'Canadian Bacon', 'Clueless', 'Cold Comfort Farm', 'Denise Calls Up', 'Destiny Turns on the Radio', 'Don Juan DeMarco', 'Doom Generation, The',
@@ -231,62 +165,93 @@ The', 'Out of Sight', 'Overnight Delivery', 'Parent Trap, The', 'Patch Adams', '
 'Other Sister, The', 'Out-of-Towners, The', 'Outside Providence', 'Pushing Tin', 'Room for Romeo Brass, A', 'Runaway Bride', "She's All That", 'Siam Sunset', 'Simon Sez', 'Simpatico'
 , 'Simply Irresistible', 'Smiling Fish and Goat on Fire', 'Soft Fruit', 'South Park: Bigger, Longer and Uncut', 'Story of Us, The', 'Stuart Little', 'Sugar Town', 'Superstar', 
 'Sweet and Lowdown', 'Tea with Mussolini', 'Teaching Mrs. Tingle', "The Lord's Lantern in Budapest", 'Three Kings', 'Three to Tango', 'Topsy-Turvy', 'Toy Story 2', 'Trailer Park Boys', 
-"Trippin'", 'Varsity Blues', 'Wild Wild West', "William Shakespeare's A Midsummer Night's Dream"])]
-        </code></pre>
-      <div class="shot"><img src="assests/spark-q2.png" alt="Q2 output" /></div>
-      <div class="shot"><img src="assests/spark-q3.png" alt="Q3 output" /></div>
-      <div class="shot"><img src="assests/spark-q4.png" alt="Q4 output" /></div>
-       <pre class="codeblock"><code>
-Q4 Output (first 10) [Optional]:
+"Trippin'", 'Varsity Blues', 'Wild Wild West', "William Shakespeare's A Midsummer Night's Dream"])]</pre>
+  </details>
+
+  <details class="output-block">
+    <summary>Q2</summary>
+    <pre class="code-block">Q2 Output (Percentage): 93.93%</pre>
+  </details>
+
+  <details class="output-block">
+    <summary>Q3</summary>
+    <pre class="code-block">Q3 Output (Percentage): 65.25%</pre>
+  </details>
+
+  <details class="output-block">
+    <summary>Q4</summary>
+    <pre class="code-block">Q4 Output (first 10) [Optional]:
 [('(no genres listed)', (3.204761904761905, 25)), ('Action', (3.029612360381851, 1592)), ('Adventure', (3.173988426389885, 1132)),
 ('Animation', (3.4659691305002696, 511)), ('Children', (3.0856882206335503, 628)), ('Comedy', (3.1492241723468632, 3445)),
 ('Crime', (3.2391753346674674, 1035)), ('Documentary', (3.789906670859635, 403)), ('Drama', (3.3569313520390556, 3688)), ('Fantasy', (3.169490780123431, 679))]
 
-========== END ==========
-        </code></pre>
-    </div>
+========== END ==========</pre>
+  </details>
+</section>
 
-    <p class="case-text" style="margin-top:10px;">
-      Make sure your folder name is <code>assets/</code> (not <code>assests/</code>) so images load correctly.
-    </p>
-  </section>
 
-  <!-- FILES -->
-  <section class="card section">
-    <h2>Files</h2>
-    <p class="case-text">
-      Include the script and documentation (and optionally a ZIP bundle with screenshots).
-    </p>
-
-    <!-- Update these paths to match your actual site structure -->
-    <div class="cta-row" style="margin-top:12px;">
-      <a class="btn" href="assests/Movies Project_fixed_assignment_v2.py" download>Download Spark Script (.py)</a>
-      <a class="btn" href="assests/Movies Project.pdf" download>Download Documentation (.pdf)</a>
-    </div>
-
-    <a class="btn" href="assests/movies-project.zip" download style="margin-top:12px; display:inline-block;">
-      Download Project Bundle (ZIP)
-    </a>
-  </section>
-
-  <!-- WHAT I LEARNED -->
   <section class="card section">
     <h2>What I learned</h2>
     <ul class="clean">
-      <li>How to structure Spark RDD solutions from raw CSV input → transformations → results</li>
-      <li>How to join movie metadata with ratings to answer higher-level questions</li>
-      <li>How to validate outputs and document reasoning clearly</li>
+      <li>CSV parsing needs defensive handling—small quirks can break results.</li>
+      <li>RDD pipelines benefit from frequent validation (sample outputs + sanity checks).</li>
+      <li>Clear documentation makes distributed workflows easier to review and reproduce.</li>
     </ul>
   </section>
 
+  <section class="card section">
+    <h2>Files</h2>
+    <p class="case-text">Script + documentation used for the assignment.</p>
+
+    <div class="file-list">
+      <a class="btn sm ghost" href="assests/Movies Project_fixed_assignment_v2.py" download>Download Spark Script (.py)</a>
+      <a class="btn sm ghost" href="assests/Movies Project.pdf" download>Download Documentation (.pdf)</a>
+      <a class="btn sm ghost" href="assests/movies-project.zip" download>Download Project Bundle (ZIP)</a>
+    </div>
+
+    <div class="cta-row section">
+    <a class="btn" href="projects.html">← Back to Projects</a>
+  </div>
+
+  </section>
+
+
 </main>
 
-<footer class="footer">
-  <p>Ananda Jackson <span id="year"></span></p>
-</footer>
+
+  <footer class="footer">
+    <p>Ananda Jackson <span id="year"></span></p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+(function(){
+  function setupCarousel(root){
+    const track = root.querySelector(".car-track");
+    const prev = root.querySelector(".car-btn.prev");
+    const next = root.querySelector(".car-btn.next");
+    if(!track || !prev || !next) return;
+
+    function step(dir){
+      const amt = Math.max(240, track.clientWidth * 0.85) * dir;
+      track.scrollBy({ left: amt, behavior: "smooth" });
+    }
+    prev.addEventListener("click", () => step(-1));
+    next.addEventListener("click", () => step(1));
+
+    root.addEventListener("keydown", (e) => {
+      if(e.key === "ArrowLeft") { step(-1); e.preventDefault(); }
+      if(e.key === "ArrowRight"){ step( 1); e.preventDefault(); }
+    }, {passive:false});
+  }
+
+  document.querySelectorAll("[data-carousel]").forEach(setupCarousel);
+})();
 </script>
+
 </body>
 </html>

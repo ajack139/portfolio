@@ -1,51 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
   <title>Panda Ops Blog | Ananda Jackson</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- IMPORTANT: when served by your custom server, use /static/ -->
+  <link href="style.css" rel="stylesheet" />
 </head>
 
 <body class="panda-blog">
-
   <!-- NAV -->
   <header class="site-header panda-header">
     <nav class="nav">
       <a class="brand panda-brand" href="index.html">🐼 Panda Ops</a>
-
       <div class="nav-links">
         <a href="#posts">Posts</a>
+        <a href="#roadmap">Roadmap</a>
         <a href="#lab">Lab</a>
         <a href="#about">About</a>
-        <!-- Optional: link back to main portfolio later -->
-        <!-- <a href="../portfolio/index.html">Portfolio</a> -->
+        <a href="../portfolio/index.html">Portfolio</a>
       </div>
     </nav>
   </header>
 
   <main class="container">
-
     <!-- HERO -->
     <section class="panda-hero">
       <div>
         <p class="panda-kicker">Home Lab • Linux • Networking • Self-Hosting</p>
         <h1 class="panda-title">Notes from my Home Lab</h1>
         <p class="panda-lead">
-          Short, practical posts about what I built, what broke, and how I fixed it.
-          This blog is my proof-of-skills project: servers, troubleshooting, automation, and documentation.
+          Short, practical write-ups about what I built, what broke, and how I fixed it.
+          Panda Ops is my proof-of-skills blog: Linux, networking, self-hosting, troubleshooting,
+          and documenting real systems.
         </p>
 
         <div class="panda-cta">
-          <a class="panda-btn" href="#posts">Read latest posts</a>
+          <a class="panda-btn" href="#posts">Read posts</a>
           <a class="panda-btn panda-btn-ghost" href="#start-here">Start here</a>
         </div>
 
         <div class="panda-chips">
-          <span class="panda-chip">🐧 Ubuntu / WSL2</span>
-          <span class="panda-chip">🐳 Docker</span>
-          <span class="panda-chip">📡 DNS / DHCP</span>
-          <span class="panda-chip">📈 Monitoring</span>
+          <span class="panda-chip">🐧 Linux</span>
+          <span class="panda-chip">🛡️ NGINX</span>
+          <span class="panda-chip">☁️ Cloudflare</span>
+          <span class="panda-chip">🔒 WireGuard VPN</span>
+          <span class="panda-chip">🧼 Pi-hole DNS</span>
         </div>
       </div>
 
@@ -53,169 +54,196 @@
         <div class="panda-hero-card-top">
           <div class="panda-face" aria-hidden="true"></div>
           <div>
-            <p class="panda-mini">Status</p>
-            <p class="panda-mini-strong">Server: online (localhost)</p>
+            <p class="panda-mini">
+              Current focus: secure foundation (VPN + DNS filtering) and building my own
+              web server + mini CMS behind NGINX.
+            </p>
+            <p class="panda-mini-strong">Lab: active</p>
           </div>
         </div>
 
         <div class="panda-hero-stats">
           <div class="panda-stat">
-            <p class="panda-mini">Current focus</p>
-            <p class="panda-mini-strong">Self-hosted blog + Pi-hole</p>
+            <p class="panda-mini">Hosting approach</p>
+            <p class="panda-mini-strong">Cloudflare → NGINX → Custom server</p>
           </div>
           <div class="panda-stat">
-            <p class="panda-mini">Next upgrade</p>
-            <p class="panda-mini-strong">NGINX + LAN access</p>
+            <p class="panda-mini">Hardware</p>
+            <p class="panda-mini-strong">Raspberry Pi (Pi Zero focus)</p>
           </div>
         </div>
 
         <p class="panda-mini" style="margin-top:10px;">
-          Tip: This blog is served from Ubuntu on my machine. Later I’ll move it to an always-on home lab server.
+          Why this blog exists: I’m building real IT skills by running real services and documenting the results.
+          I started with reliable tools (NGINX), then added edge protection (Cloudflare), and now I’m building
+          fundamentals (my own server + CMS) in a safe hybrid setup.
         </p>
       </div>
     </section>
 
     <!-- START HERE -->
-    <section id="start-here" class="panda-section">
+    <section class="panda-section" id="start-here">
       <h2 class="panda-h2">Start here</h2>
+
       <div class="panda-grid-3">
         <article class="panda-card">
           <h3 class="panda-h3">1) What this blog is</h3>
           <p class="panda-text">
-            A runbook-style IT blog: clear steps, screenshots, troubleshooting notes, and what I learned.
+            A runbook-style home lab log. Each post aims to include: goal → environment → steps → errors → fixes → takeaway.
           </p>
         </article>
 
         <article class="panda-card">
           <h3 class="panda-h3">2) What I’m building</h3>
           <p class="panda-text">
-            Projects that stack: ad blocking → monitoring → self-hosted storage → automation.
+            A homelab that grows in phases: stable hosting → secure remote access → DNS filtering → always-on services
+            → upgraded home server + segmentation.
           </p>
         </article>
 
         <article class="panda-card">
-          <h3 class="panda-h3">3) How to read posts</h3>
+          <h3 class="panda-h3">3) How posts are generated</h3>
           <p class="panda-text">
-            Each post includes: goal → environment → steps → errors → fixes → takeaway.
+            Posts are written as simple files (Markdown) and my custom server turns them into consistent pages using the same CSS.
+            The homepage cards are auto-generated from the post list (mini CMS).
           </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ROADMAP (ordered the way you actually did it) -->
+    <section class="panda-section" id="roadmap">
+      <h2 class="panda-h2">Roadmap (in the order I’m building it)</h2>
+
+      <div class="panda-grid-2">
+        <article class="panda-card">
+          <h3 class="panda-h3">Phase 1: Get hosting working locally</h3>
+          <ul class="panda-list">
+            <li>Serve the site locally and confirm pages load reliably</li>
+            <li>Organize files and verify the blog layout + CSS consistency</li>
+            <li>Start documenting repeatable steps</li>
+          </ul>
+        </article>
+
+        <article class="panda-card">
+          <h3 class="panda-h3">Phase 2: Add NGINX for reliability</h3>
+          <ul class="panda-list">
+            <li>Install NGINX and validate logs + requests</li>
+            <li>Clean separation of content vs configuration</li>
+            <li>Prepare for reverse proxy architecture</li>
+          </ul>
+        </article>
+
+        <article class="panda-card">
+          <h3 class="panda-h3">Phase 3: Add Cloudflare for safer public access</h3>
+          <ul class="panda-list">
+            <li>DNS + HTTPS at the edge</li>
+            <li>Use a Cloudflare Origin Cert with Full (strict)</li>
+            <li>Lock down origin traffic to Cloudflare (firewall allowlist)</li>
+          </ul>
+        </article>
+
+        <article class="panda-card">
+          <h3 class="panda-h3">Phase 4: Pi Zero security foundation</h3>
+          <ul class="panda-list">
+            <li>WireGuard VPN (safe remote access)</li>
+            <li>Pi-hole DNS filtering (with a fallback plan)</li>
+            <li>Stability checks so the internet doesn’t depend on vibes</li>
+          </ul>
+        </article>
+
+        <article class="panda-card">
+          <h3 class="panda-h3">Phase 5: Custom web server + mini CMS (hybrid)</h3>
+          <ul class="panda-list">
+            <li>Custom server listens privately (localhost) behind NGINX</li>
+            <li>Auto-generate blog cards from post files</li>
+            <li>Click-through pages: /blog/&lt;slug&gt; render consistent post layout</li>
+          </ul>
+        </article>
+
+        <article class="panda-card">
+          <h3 class="panda-h3">Phase 6: Upgrade path</h3>
+          <ul class="panda-list">
+            <li>mATX home server build (Docker host + services)</li>
+            <li>Storage + backups plan (NAS/snapshots/off-device copy)</li>
+            <li>Network segmentation (Trusted/Servers/IoT/Guest VLANs)</li>
+          </ul>
         </article>
       </div>
     </section>
 
     <!-- MAIN LAYOUT -->
-    <section id="posts" class="panda-layout">
+    <section class="panda-layout" id="posts">
       <!-- POSTS -->
       <div>
         <h2 class="panda-h2">Latest posts</h2>
 
-        <!-- Featured post -->
-        <article class="panda-post panda-post-featured">
-          <div class="panda-post-meta">
-            <span class="panda-badge">Featured</span>
-            <span>Dec 30, 2025</span>
-            <span>•</span>
-            <span>Linux / WSL2</span>
-          </div>
-
-          <h3 class="panda-post-title">My first self-hosted website on Ubuntu (WSL2)</h3>
-          <p class="panda-text">
-            I organized my Linux home directory, served the site with Python’s HTTP server, learned why
-            <code>index.html</code> matters, and fixed broken asset paths.
-          </p>
-
-          <div class="panda-post-actions">
-            <!-- Later you can turn this into a real post page -->
-            <a class="panda-btn" href="#post-1">Read</a>
-            <a class="panda-btn panda-btn-ghost" href="#lab">View lab notes</a>
-          </div>
-        </article>
-
-        <!-- Regular post cards -->
-        <article class="panda-post">
-          <div class="panda-post-meta">
-            <span class="panda-badge panda-badge-soft">Coming next</span>
-            <span>DNS / Networking</span>
-          </div>
-          <h3 class="panda-post-title">Pi-hole: ad blocking for the whole home</h3>
-          <p class="panda-text">
-            DNS-based ad blocking, DHCP/router settings, and troubleshooting when things “mysteriously” stop loading.
-          </p>
-        </article>
-
-        <article class="panda-post">
-          <div class="panda-post-meta">
-            <span class="panda-badge panda-badge-soft">Planned</span>
-            <span>Monitoring / Ops</span>
-          </div>
-          <h3 class="panda-post-title">Monitoring my lab: uptime + system metrics</h3>
-          <p class="panda-text">
-            Build a simple dashboard, set actionable alerts, and keep an incident log like a real ops environment.
-          </p>
-        </article>
-
-        <article class="panda-post">
-          <div class="panda-post-meta">
-            <span class="panda-badge panda-badge-soft">Planned</span>
-            <span>Self-hosting / Storage</span>
-          </div>
-          <h3 class="panda-post-title">Self-hosted drive: Nextcloud basics + backups</h3>
-          <p class="panda-text">
-            Users, permissions, storage layout, and the #1 rule: make a backup plan before you trust it.
-          </p>
-        </article>
+        <!-- This gets filled by your CMS via /api/posts -->
+        <div id="posts-container">
+          <article class="panda-post panda-post-featured">
+            <div class="panda-post-meta">
+              <span class="panda-badge">Loading</span>
+              <span>Please wait</span>
+            </div>
+            <h3 class="panda-post-title">Fetching posts…</h3>
+            <p class="panda-text">
+              If this message never changes, the server endpoint <code>/api/posts</code> isn’t running yet.
+              That’s okay — once your custom server is live, this section will auto-build cards.
+            </p>
+          </article>
+        </div>
       </div>
 
       <!-- SIDEBAR -->
       <aside>
-        <div id="about" class="panda-card panda-sticky">
-          <h2 class="panda-h2" style="margin-top:0;">About</h2>
+        <div class="panda-card panda-sticky" id="about">
+          <h2 class="panda-h2" style="margin-top:0;">About me</h2>
           <p class="panda-text">
-            I’m building a home lab to sharpen real IT skills: Linux, networking, troubleshooting, and automation.
-            This blog is where I document the journey (runbook style).
+            I’m Ananda Jackson — an IT student building a practical homelab to sharpen real-world skills:
+            Linux, networking, self-hosting, security fundamentals, and troubleshooting under constraints.
+            I care about clean documentation and repeatable setups, so each post is written like a runbook.
           </p>
 
           <div class="panda-divider"></div>
 
-          <h3 class="panda-h3">Categories</h3>
+          <h3 class="panda-h3">What I’m practicing here</h3>
           <div class="panda-chips">
-            <span class="panda-chip">Linux</span>
-            <span class="panda-chip">Networking</span>
-            <span class="panda-chip">Self-Hosting</span>
-            <span class="panda-chip">Monitoring</span>
-            <span class="panda-chip">Troubleshooting</span>
-            <span class="panda-chip">Automation</span>
+            <span class="panda-chip">Linux CLI</span>
+            <span class="panda-chip">Reverse Proxy</span>
+            <span class="panda-chip">HTTPS Concepts</span>
+            <span class="panda-chip">VPN</span>
+            <span class="panda-chip">DNS</span>
+            <span class="panda-chip">Logging</span>
           </div>
 
           <div class="panda-divider"></div>
 
           <h3 class="panda-h3">Contact</h3>
-          <p class="panda-text" style="margin-bottom:0;">
-            <!-- optional -->
-            Add your email/LinkedIn here later.
-          </p>
+          <p class="panda-text" style="margin-bottom:0;">Anandaajackson@gmail.com</p>
         </div>
       </aside>
     </section>
 
     <!-- LAB NOTES -->
-    <section id="lab" class="panda-section">
+    <section class="panda-section" id="lab">
       <h2 class="panda-h2">Lab notes</h2>
       <div class="panda-grid-2">
         <article class="panda-card">
           <h3 class="panda-h3">Current environment</h3>
           <ul class="panda-list">
-            <li>Ubuntu 24.04 on WSL2</li>
-            <li>Serving static site with Python HTTP server</li>
-            <li>Folder: <code>/home/queen/blogs/it-blog</code></li>
+            <li>Home network: router + stable Wi-Fi</li>
+            <li>Pi hosts services and runs 24/7 where possible</li>
+            <li>Public access: Cloudflare + NGINX (edge + gate)</li>
+            <li>Private app: custom server on localhost behind NGINX</li>
           </ul>
         </article>
 
         <article class="panda-card">
-          <h3 class="panda-h3">Next upgrades</h3>
+          <h3 class="panda-h3">Why hybrid matters</h3>
           <ul class="panda-list">
-            <li>NGINX + real web server config</li>
-            <li>LAN access from phone/other devices</li>
-            <li>Public access via Cloudflare Tunnel (safe)</li>
+            <li>NGINX handles the risky public ports (80/443)</li>
+            <li>Custom server stays private and focuses on routing + content</li>
+            <li>Less attack surface, better learning, easier debugging</li>
           </ul>
         </article>
       </div>
@@ -225,12 +253,44 @@
     <footer class="panda-footer">
       <p>🐼 Panda Ops Blog • Built by Ananda Jackson • <span id="year"></span></p>
     </footer>
-
   </main>
 
   <script>
+    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 
-</body>
-</html>
+    // Mini CMS: fetch a list of posts and build cards.
+    // Your custom server will implement GET /api/posts returning JSON like:
+    // [
+    //   { "title":"...", "date":"2026-01-10", "category":"Web Hosting", "excerpt":"...", "slug":"nginx-cloudflare", "featured":true }
+    // ]
+    async function loadPosts() {
+      const container = document.getElementById("posts-container");
+
+      try {
+        const res = await fetch("/api/posts", { headers: { "Accept": "application/json" } });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+
+        const posts = await res.json();
+
+        if (!Array.isArray(posts) || posts.length === 0) {
+          container.innerHTML = `
+            <article class="panda-post panda-post-featured">
+              <div class="panda-post-meta">
+                <span class="panda-badge">No posts yet</span>
+                <span>Add a Markdown file</span>
+                <span>•</span>
+                <span>content/posts</span>
+              </div>
+              <h3 class="panda-post-title">Your blog is ready — just add posts</h3>
+              <p class="panda-text">
+                When you add your first post file (with a slug), this page will automatically create cards here.
+              </p>
+            </article>
+          `;
+          return;
+        }
+
+        // Build HTML for posts
+        let html = "";
+        for (c
