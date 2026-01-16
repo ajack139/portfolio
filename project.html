@@ -11,8 +11,12 @@
     <nav class="nav">
       <a class="brand" href="index.html">Ananda Jackson</a>
       <div class="nav-links">
-        <a class="active" href="projects.html">Projects</a>
+        
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="projects.html">Projects</a>
         <a href="resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+        
       </div>
     </nav>
   </header>
@@ -20,29 +24,48 @@
   <main class="container">
     <section class="pagehead">
       <h1>Projects</h1>
-      <p class="lead">A small set of projects that show how I think, build, and troubleshoot.</p>
+      <p class="lead">
+        A curated set of projects that demonstrate how I approach problem‑solving,
+        troubleshooting, and user‑centered design across hardware, software, and systems.
+      </p>
     </section>
 
     <section class="grid">
+
+      <article class="card project">
+        <div class="project-top">
+          <h2>Ananda’s Home Lab Blog</h2>
+          <p class="pill">IT • Networking • Linux • Troubleshooting</p>
+        </div>
+        <p>
+          A self‑hosted IT blog documenting my home lab builds, configuration decisions,
+          and troubleshooting processes. The focus is on practical systems skills and
+          clear, repeatable documentation.
+        </p>
+        <ul class="tags">
+          <li>Self‑hosting</li><li>Linux</li><li>Networking</li><li>Runbook documentation</li>
+        </ul>
+        <div class="cta-row" style="margin-top:12px;">
+          <a class="btn" href="https://www.pandahomelab.com/">View blog</a>
+        </div>
+      </article>
+
       <article class="card project">
         <div class="project-top">
           <h2>Arduino Audio Visualizer</h2>
           <p class="pill">Hardware • Troubleshooting</p>
         </div>
         <p>
-          Built a physical audio visualizer using an Arduino, LED matrix, and microphone input.
-          Focused on debugging, iteration, and reliable output behavior.
+          Built a physical audio visualizer using an Arduino, microphone input,
+          and LED matrix. Focused on debugging signal noise, stabilizing output,
+          and documenting fixes.
         </p>
         <ul class="tags">
           <li>Arduino</li><li>Sensors</li><li>LED Matrix</li><li>Debugging</li>
         </ul>
-        <details>
-          <summary>View details</summary>
-          <div class="details">
-            <p><strong>What I did:</strong> integrated components, tested signal behavior, adjusted output modes, documented fixes.</p>
-            <p><strong>Outcome:</strong> working prototype + clearer hardware/software troubleshooting workflow.</p>
-          </div>
-        </details>
+        <div class="cta-row" style="margin-top:12px;">
+          <a class="btn" href="arduino-visualizer.html">View case study</a>
+        </div>
       </article>
 
       <article class="card project">
@@ -51,19 +74,15 @@
           <p class="pill">UX • Research</p>
         </div>
         <p>
-          Designed a wellness app concept focused on emotional awareness and eating habits through
-          user-centered research and iterative prototyping.
+          A wellness app concept focused on helping students recognize emotional
+          eating patterns through simple daily reflection and supportive prompts.
         </p>
         <ul class="tags">
-          <li>Figma</li><li>User Research</li><li>Prototyping</li><li>Iteration</li>
+          <li>Figma</li><li>User research</li><li>Prototyping</li><li>Iteration</li>
         </ul>
-        <details>
-          <summary>View details</summary>
-          <div class="details">
-            <p><strong>What I did:</strong> personas, flows, prototype iterations, usability-minded decisions.</p>
-            <p><strong>Outcome:</strong> interactive prototype + documented design rationale.</p>
-          </div>
-        </details>
+        <div class="cta-row" style="margin-top:12px;">
+          <a class="btn" href="mood-and-food.html">View case study</a>
+        </div>
       </article>
 
       <article class="card project">
@@ -72,19 +91,15 @@
           <p class="pill">Design • Prototyping</p>
         </div>
         <p>
-          Prototyped a music-focused experience and refined the UI through feedback and iteration.
-          Built a clear user flow from discovery to playback.
+          A music app concept and interactive prototype designed to explore
+          discovery‑to‑playback flows and UI consistency through iteration.
         </p>
         <ul class="tags">
-          <li>Wireframes</li><li>UI Design</li><li>User Flow</li><li>Testing</li>
+          <li>UI design</li><li>User flows</li><li>Prototyping</li><li>Testing</li>
         </ul>
-        <details>
-          <summary>View details</summary>
-          <div class="details">
-            <p><strong>What I did:</strong> storyboarding, wireframes, interactive prototype, revisions.</p>
-            <p><strong>Outcome:</strong> polished flow + stronger UI consistency.</p>
-          </div>
-        </details>
+        <div class="cta-row" style="margin-top:12px;">
+          <a class="btn" href="niner-tunes.html">View case study</a>
+        </div>
       </article>
 
       <article class="card project">
@@ -93,20 +108,18 @@
           <p class="pill">Systems • Data</p>
         </div>
         <p>
-          Worked with HDFS and Apache Spark to process and analyze datasets, learning how distributed
-          systems handle storage and large-scale processing.
+          Processed and analyzed large datasets using HDFS and Apache Spark,
+          focusing on distributed workflows, reliable parsing, and
+          accurate aggregation.
         </p>
         <ul class="tags">
-          <li>Hadoop</li><li>HDFS</li><li>Spark</li><li>Data Processing</li>
+          <li>Hadoop</li><li>HDFS</li><li>Spark</li><li>Data processing</li>
         </ul>
-        <details>
-          <summary>View details</summary>
-          <div class="details">
-            <p><strong>What I did:</strong> loaded data into HDFS, ran Spark jobs, validated outputs, documented learnings.</p>
-            <p><strong>Outcome:</strong> clearer understanding of scalability + distributed workflows.</p>
-          </div>
-        </details>
+        <div class="cta-row" style="margin-top:12px;">
+          <a class="btn" href="hadoop-spark.html">View case study</a>
+        </div>
       </article>
+
     </section>
   </main>
 
